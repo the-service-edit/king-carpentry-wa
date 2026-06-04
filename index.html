@@ -153,7 +153,10 @@
     :root{--sb:0px}
     .sidebar{display:none}
     main{margin-left:0}
-    .hero{margin-left:0;width:100%}
+    .hero{margin-left:0;width:100%;display:block;height:auto;min-height:0}
+    .hero .bg{position:relative;height:46vh;min-height:300px;width:100%}
+    .hero .inner{position:static;background:var(--navy);padding:30px 24px 36px}
+    .hero h1{font-size:32px;line-height:1.06;margin:14px 0 24px}
     .topbar{display:flex;position:sticky;top:0;z-index:100;align-items:center;justify-content:space-between;
       background:var(--navy);padding:14px 20px;border-bottom:2px solid var(--gold)}
     .topbar img{height:44px;width:auto}
