@@ -75,22 +75,23 @@
   /* ABOUT */
   .about-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:62px;align-items:center}
   .about-copy p{font-size:15.5px;color:#55606b;margin:22px 0 0;max-width:48ch}
-  .process{margin-top:34px;display:flex;flex-direction:column;gap:0}
-  .process div{display:flex;gap:18px;padding:13px 0}
+  .process{margin-top:34px;display:flex;flex-direction:column}
+  .process>div{display:flex;gap:18px;padding:16px 0;border-top:1px solid var(--line);align-items:baseline}
+  .process>div:last-child{border-bottom:1px solid var(--line)}
   .process .pn{font-weight:700;color:var(--gold);font-size:14px;min-width:30px}
+  .process .step-txt{display:flex;flex-direction:column;gap:5px}
   .process b{color:var(--navy);font-weight:600;font-size:14.5px}
   .process span{color:#697480;font-size:13.5px}
   .about-art{position:relative;aspect-ratio:4/5;background-size:cover;background-position:center;border-radius:2px}
   .about-art .pin{position:absolute;right:-26px;bottom:-26px;width:140px;aspect-ratio:1;border:7px solid var(--cream-light);background-size:cover;background-position:center;border-radius:2px;box-shadow:0 18px 44px rgba(40,48,56,.2)}
 
   /* WORK */
-  .work-grid{display:grid;grid-template-columns:repeat(3,1fr);grid-auto-rows:230px;grid-auto-flow:dense;gap:8px;margin-top:46px}
-  .tile{position:relative;overflow:hidden;border-radius:2px;cursor:pointer;background-size:cover;background-position:center}
+  .work-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin-top:46px}
+  .tile{position:relative;aspect-ratio:1;overflow:hidden;border-radius:2px;cursor:pointer;background-size:cover;background-position:center}
   .tile::after{content:attr(data-cap);position:absolute;left:14px;bottom:12px;color:#fff;font-size:9.5px;letter-spacing:.2em;text-transform:uppercase;z-index:2;opacity:0;transition:.4s}
   .tile::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 50%,rgba(26,32,40,.7));opacity:0;transition:.4s;z-index:1}
   .tile:hover::after,.tile:hover::before{opacity:1}
   .tile:hover{transform:scale(1.012)}
-  .tile.tall{grid-row:span 2} .tile.wide{grid-column:span 2}
 
   /* SERVICES */
   .svc{display:grid;grid-template-columns:repeat(2,1fr);gap:0;margin-top:44px;border-top:1px solid var(--line)}
@@ -160,7 +161,7 @@
     .burger span{width:26px;height:2px;background:var(--cream);display:block}
     .about-grid{grid-template-columns:1fr;gap:46px}
     .about-art .pin{right:16px;bottom:16px;width:94px}
-    .work-grid{grid-template-columns:repeat(2,1fr);grid-auto-rows:180px}
+    .work-grid{grid-template-columns:repeat(2,1fr)}
     .svc{grid-template-columns:1fr}
     .svc a:nth-child(odd){border-right:none;padding-right:4px}
     .svc a:nth-child(even){padding-left:4px}
@@ -226,7 +227,7 @@
     <div class="bg" style="background-image:url('images/hero.jpg')"></div>
     <div class="inner">
       <span class="label">Carpentry · Wanneroo, WA</span>
-      <h1>Crafted by hand for <em>a home that lasts.</em></h1>
+      <h1>Precision in <em>every finish.</em></h1>
       <a href="#contact" class="btn">Get a Quote <span class="ar">&rarr;</span></a>
     </div>
   </section>
@@ -236,14 +237,12 @@
     <span class="eyebrow label rv">Our Work</span>
     <div class="h2 rv">Recent projects <em>across Perth.</em></div>
     <div class="work-grid rv">
-      <div class="tile tall" data-cap="Acoustic slat feature wall" style="background-image:url('images/work-acoustic-slat-wall.jpg')"></div>
-      <div class="tile" data-cap="Raked VJ ceiling lining" style="background-image:url('images/work-raked-vj-ceiling.jpg')"></div>
+      <div class="tile" data-cap="Timber slat acoustic panelling" style="background-image:url('images/work-acoustic-slat-panelling.jpg')"></div>
+      <div class="tile" data-cap="Oak staircase & slat screen" style="background-image:url('images/work-oak-stair-slat-screen.jpg')"></div>
+      <div class="tile" data-cap="Vaulted VJ ceiling lining" style="background-image:url('images/work-vaulted-vj-ceiling.jpg')"></div>
       <div class="tile" data-cap="Arched window & frame" style="background-image:url('images/work-arched-window.jpg')"></div>
-      <div class="tile wide" data-cap="Floating timber media unit" style="background-image:url('images/work-floating-media-unit.jpg')"></div>
-      <div class="tile" data-cap="Solid timber staircase" style="background-image:url('images/work-timber-staircase.jpg')"></div>
-      <div class="tile" data-cap="Backlit feature wall detail" style="background-image:url('images/work-backlit-feature-wall.jpg')"></div>
-      <div class="tile tall" data-cap="Vaulted ceiling detail" style="background-image:url('images/work-vaulted-ceiling.jpg')"></div>
-      <div class="tile wide" data-cap="Custom timber carpentry" style="background-image:url('images/work-custom-carpentry.jpg')"></div>
+      <div class="tile" data-cap="Arched opening & wall panelling" style="background-image:url('images/work-arched-wall-panelling.jpg')"></div>
+      <div class="tile" data-cap="Door, architrave & curved corner" style="background-image:url('images/work-door-architrave.jpg')"></div>
     </div>
   </section>
 
@@ -264,17 +263,15 @@
     <div class="about-grid">
       <div class="about-copy">
         <span class="eyebrow label rv">About King Carpentry</span>
-        <div class="h2 rv">Good building is something<br>you <em>feel every day.</em></div>
+        <div class="h2 rv">Great building is something<br>you <em>feel every day.</em></div>
         <p class="rv">From acoustic panelling to full renovations, we work with clean lines, honest materials and a level of finish you notice up close. Every job is handled by qualified hands from start to end, so the result feels considered and built to stay.</p>
         <div class="process rv">
-          <div><span class="pn">01</span><div><b>Get in touch</b><br><span>Send your project and a few photos.</span></div></div>
-          <div><span class="pn">02</span><div><b>Free quote &amp; site visit</b><br><span>We measure up and give a clear, honest price.</span></div></div>
-          <div><span class="pn">03</span><div><b>The build &amp; finish</b><br><span>Tidy on site, and walked through at the end.</span></div></div>
+          <div><span class="pn">01</span><div class="step-txt"><b>Get in touch</b><span>Send your project and a few photos.</span></div></div>
+          <div><span class="pn">02</span><div class="step-txt"><b>Free quote &amp; site visit</b><span>We measure up and give a clear, honest price.</span></div></div>
+          <div><span class="pn">03</span><div class="step-txt"><b>The build &amp; finish</b><span>Tidy on site, and walked through at the end.</span></div></div>
         </div>
       </div>
-      <div class="about-art rv" style="background-image:url('images/about-main.jpg')">
-        <div class="pin" style="background-image:url('images/about-pin.jpg')"></div>
-      </div>
+      <div class="about-art rv" style="background-image:url('images/about-main.jpg')"></div>
     </div>
   </section>
 
@@ -304,7 +301,7 @@
   <!-- CONTACT -->
   <section class="sec pad contact" id="contact">
     <span class="eyebrow label rv">Start a Project</span>
-    <div class="h2 rv">Let's build <em>something good.</em></div>
+    <div class="h2 rv">Let's build <em>something great.</em></div>
     <p class="lead rv">Tell us about your space and we'll get back to you with a free, no-pressure quote.</p>
     <form class="quote-form rv" id="quoteForm">
       <!-- Register Kingcarpentrywa@yahoo.com free at web3forms.com and paste the access key below -->
